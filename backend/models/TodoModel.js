@@ -6,13 +6,14 @@ const todooSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  completed: {
-    type: Boolean,
-    default: false,
+  status: {
+    type: String,
+    enum: ['not started', 'in progress', 'completed'],
+    default: 'not started',
   },
-  inProgress: {
-    type: Boolean,
-    default: false,
+  created_at: {
+    type: Date,
+    default: Date.now,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -23,4 +24,5 @@ const todooSchema = new mongoose.Schema({
 
 // Create the Todoo model
 const Todoo = mongoose.model('Todoo', todooSchema);
+
 module.exports = Todoo;
