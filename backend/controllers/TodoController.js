@@ -1,18 +1,18 @@
 const Todoo = require('../models/TodoModel');
-// Create a Todoo item
+
 const createTodoo = async (req, res) => {
   try {
-    const { text, status, userId } = req.body; // Use 'status' instead of 'completed' and 'inProgress'
+    const { text, status, userId } = req.body;
     const todoo = new Todoo({
       text,
-      status, // Use 'status' field
+      status,
       user: userId,
     });
     const savedTodoo = await todoo.save();
-    res.status(201).json({ id: savedTodoo._id });
+    res.status(201).json({ message: 'Todo created successfully', id: savedTodoo._id });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Failed to create todo' });
+    res.status(500).json({ message: 'Failed to create todo' });
   }
 };
 
@@ -32,6 +32,7 @@ const deleteTodoo = async (req, res) => {
     if (deletedTodoo.user.toString() !== userId) {
       return res.status(403).json({ error: 'Unauthorized access' });
     }
+
 
     res.status(204).end();
   } catch (error) {
@@ -101,7 +102,7 @@ const updateTodoo = async (req, res) => {
       { new: true }
     );
 
-    res.status(200).json(updatedTodoo);
+    res.status(200).json({ message: 'Todo updated successfully'});
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });

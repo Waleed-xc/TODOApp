@@ -12,7 +12,8 @@ function EditTodo() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { user } = useAuthContext();
-
+  const [message, setMessage] = useState(''); // State for custom message
+  const [redirecting, setRedirecting] = useState(false);
 
   useEffect(() => {
     fetchTodo();
@@ -34,12 +35,18 @@ function EditTodo() {
 
   const updateTodo = async () => {
     try {
-      await axios.put(`/api/todos/${id}`, { id, text: updateText, status: updateStatus ,  userId: user.idd  });
+     const response =  await axios.put(`/api/todos/${id}`, { id, text: updateText, status: updateStatus ,  userId: user.idd  });
       console.log('Todo updated');
-      navigate('/users/userhome'); // Redirect to the UserHome page
-
+      setMessage(response.data.message); // Set the custom message from the response
+      setRedirecting(true); // Display the "Redirecting" message
+      setTimeout(() => {
+        // Redirect to another page using window.location.href
+        window.location.href = '/users/userhome';
+      }, 1000); // Redirect after 3 seconds (adjust the delay as needed)
     } catch (error) {
       console.error('Error updating todo', error);
+      setMessage('Failed to Edit todo'); // Set an error message
+
     }
   }
 
@@ -62,6 +69,9 @@ function EditTodo() {
         <option value="completed">Completed</option>
       </select>
       <button onClick={updateTodo}>Update Todo</button>
+      {message && <p>{message}</p>}
+      {redirecting && <p>Redirecting in a few seconds...</p>}
+
     </div>
   );
 }
