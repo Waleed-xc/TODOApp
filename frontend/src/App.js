@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route, Routes  ,Navigate } from "react-router-
 import UserSignup from './Users/UserSignup';
 import UserLogin from './Users/UserLogin';
 import UserHome from './Users/UserHome';
-import TODO from './Users/TODO';
+import EditTodo from './Users/EditTodo';
+import CreateTodo from './Users/CreateTodo';
 function App() {
   const {user} = useAuthContext()
   return (
@@ -15,7 +16,10 @@ function App() {
         <Route exact path="/" element={!user? <UserSignup />:<Navigate to="/users/userhome"/> }/>
         <Route exact path="/users/userhome" element={user?<UserHome />:<Navigate to="/"/>}/>
         <Route exact path="/login" element={!user? <UserLogin />:<Navigate to="/users/userhome"/>  }/>
-				<Route exact path="/users/todo" element={  <TODO />}/>
+        <Route exact path="/users/edit/:id" element={<EditTodo /> }/>
+        <Route exact path="/users/create/" element={<CreateTodo /> }/>
+
+
 
 				</Routes>
 			</Router>

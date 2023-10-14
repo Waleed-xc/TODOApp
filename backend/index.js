@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const cors = require("cors");
 const userRouter = require("./routes/UserRoute");
 const todoRoutes = require('./routes/TodoRoute');
-
 const connection = require("./db");
 const app = express();
 const PORT = process.env.PORT || 8090;

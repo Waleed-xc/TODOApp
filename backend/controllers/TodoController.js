@@ -1,5 +1,4 @@
 const Todoo = require('../models/TodoModel');
-
 // Create a Todoo item
 const createTodoo = async (req, res) => {
   try {
@@ -59,6 +58,29 @@ const getTodoos = async (req, res) => {
   }
 };
 
+// Get a single todo by ID
+const getTodoById = async (req, res) => {
+  try {
+    const { todoId } = req.params; // Assuming the todoId is part of the URL params
+    
+    if (!todoId) {
+      return res.status(400).json({ error: 'Todo ID is required' });
+    }
+
+    const todo = await Todoo.findById(todoId);
+
+    if (!todo) {
+      return res.status(404).json({ error: 'Todo not found' });
+    }
+
+    res.status(200).json(todo);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+
 const updateTodoo = async (req, res) => {
   try {
     const { id, text, status, userId } = req.body; // Include 'status' and 'userId' fields
@@ -92,4 +114,5 @@ module.exports = {
   getTodoos,
   updateTodoo,
   deleteTodoo,
+  getTodoById,
 };
