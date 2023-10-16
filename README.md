@@ -1,15 +1,26 @@
 # TODOApp
 1- To Do App using MERN Stack
-2- the application allows the users to register and create they're own Todo's based upon the registered user4-
+
+2- the application allows the users to register and create they're own Todo's based upon the registered user
+
 3- the application was developed by using bootstrap , react, html, css, javascript , express , nodejs , and mongodb
+
 4- to start the application
+
 5- install the zip code or use git clone
+
 6- open the command prompt and cd to the application directory 
+
 7- cd to the frontend run the command npm i
+
 8- cd to the backend run the command npm i
+
 9- create a file called .env inside of the backend directory and add your MONGO_URI = link
+
 10- after that start a terminal and cd to the frontend and run the command npm start
+
 11- open another terminal and cd to the backend and run the command nodemon index.js
+
 
 application showcase
 -
