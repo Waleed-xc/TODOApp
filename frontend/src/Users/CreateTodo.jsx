@@ -4,7 +4,7 @@ import { PenIcon , TrashIcon, AddIcon } from '../Users/Icons'; // Import the Pen
 import { useAuthContext } from "../Hooks/useAuthContext";
 function CreateTodo() {
   const [createText, setCreateText] = useState('');
-  const [createStatus, setCreateStatus] = useState('not started');
+  const [createStatus, setCreateStatus] = useState('Not Started');
   const [message, setMessage] = useState(''); // State for custom message
   const { user } = useAuthContext();
   const [redirecting, setRedirecting] = useState(false);
