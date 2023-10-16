@@ -10,9 +10,9 @@ cd to the backend run the command npm i
 create a file called .env inside of the backend directory and add your MONGO_URI = link
 after that start a terminal and cd to the frontend and run the command npm start
 open another terminal and cd to the backend and run the command nodemon index.js
------------------------------------------------------------------------------------------
 
 application showcase
+-
 ![Screenshot (23)](https://github.com/Waleed-xc/TODOApp/assets/102128756/489d0c9c-4aa7-4af7-a069-3bb0aa5d5f1e)
 ![Screenshot (24)](https://github.com/Waleed-xc/TODOApp/assets/102128756/2bcbcb1e-24f3-4bc8-94fb-98357ef7c0d1)
 ![Screenshot (25)](https://github.com/Waleed-xc/TODOApp/assets/102128756/5ef4ade9-2768-4a56-b7e0-bcb20f3dc6c0)
