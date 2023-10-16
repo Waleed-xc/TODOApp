@@ -1,8 +1,8 @@
-// EditTodo.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
- import { useAuthContext } from "../Hooks/useAuthContext";
+import { useAuthContext } from "../Hooks/useAuthContext";
+import { PenIcon , TrashIcon, AddIcon } from '../Users/Icons'; // Import the PenIcon from your Icon component
 
 function EditTodo() {
   const { id } = useParams();
@@ -51,31 +51,43 @@ function EditTodo() {
   }
 
   if (loading) {
-    return <div className="card text-dark bg-primary" >Loading...</div>;
+    return  <div className='d-flex justify-content-center'> <div className="  w-25 text-dark bg-primary " >Loading...</div>  </div>;
   }
 
   if (error) {
-    return <div className="card text-dark bg-warning" >{error}</div>;
+    return   <div className='d-flex justify-content-center'> <div className="  w-25 text-dark bg-warning" >{error}</div>  </div>;
   }
 
   return (
-    <div>
-      <h1>Edit Todo</h1>
+    <div className='bg-light bg-gradient' style={{height: "100vh"}}>
+
+
+<div class="bg-light"  >
+      <h1 class="display-3">Edit Todo</h1>
+    </div>
+
+
+
+
      <input type="hidden" value={user.idd} />
-      <input type="text" value={updateText} onChange={(e) => setUpdateText(e.target.value)} />
-      <select value={updateStatus} onChange={(e) => setUpdateStatus(e.target.value)}>
-        <option value="not started">Not Started</option>
-        <option value="in progress">In Progress</option>
-        <option value="completed">Completed</option>
+<div className='d-flex justify-content-center' >
+    <input class="  w-25 form-control" id="ex2" type="text"  value={updateText} onChange={(e) => setUpdateText(e.target.value)} />
+    </div>
+
+    <div className='d-flex justify-content-center' >
+      <select class="w-25 form-select" aria-label="Default select example" value={updateStatus} onChange={(e) => setUpdateStatus(e.target.value)}>
+        <option value="Not Started">Not Started</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
       </select>
-      <button onClick={updateTodo}>Update Todo</button>
+      </div>
 
-      
-      {message && <div  style={{textAlign: 'center'}}  className="card text-dark bg-primary">{message}</div>}
-      {redirecting && <p  style={{textAlign: 'center'}} className="card text-dark bg-warning">Redirecting in a few seconds...</p>}
 
-      {message && <p>{message}</p>}
-      {redirecting && <p>Redirecting in a few seconds...</p>}
+      <button className='btn btn-warning' onClick={updateTodo}> <PenIcon/> Edit Todo</button>
+      <div className='d-flex justify-content-center'  > {message && <div  style={{textAlign: 'center'}}  className="w-25 text-dark bg-success">{message}</div>} </div>
+         <div className='d-flex justify-content-center'  >  {redirecting && <p  style={{textAlign: 'center'}} className="w-25 text-dark bg-success">Redirecting in a few seconds...</p>}
+      </div>
+
 
     </div>
   );

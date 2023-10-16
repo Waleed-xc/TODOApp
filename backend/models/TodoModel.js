@@ -8,8 +8,8 @@ const todooSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['not started', 'in progress', 'completed'],
-    default: 'not started',
+    enum: ['Not Started', 'In Progress', 'Completed'],
+    default: 'Not Started',
   },
   created_at: {
     type: Date,

@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { useUserLogout } from '../Hooks/useUserLogout';
 import DeleteConfirmation from './DeleteConfirmation'; // Import the DeleteConfirmation component
 import '../Users/style.css';
+import { PenIcon , TrashIcon, AddIcon , BackIcon } from '../Users/Icons'; // Import the PenIcon from your Icon component
+
 function UserHome() {
   const [createText, setCreateText] = useState('');
   const [createStatus, setCreateStatus] = useState('not started');
@@ -76,9 +78,10 @@ function UserHome() {
 <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{justifyContent: 'center' , alignItems: 'center' }} >
 {user && (
             <div>
-        	 <span >Logged User &nbsp;   {user.email}</span> 
+                            <button class="btn btn-dark" onClick={handleClick}>  <BackIcon/> Log out</button>
+
+        	 <span >  {user.email}</span> 
            &nbsp;
-              <button class="btn btn-dark" onClick={handleClick}>Log out</button>
             </div>
           )}
           &nbsp; &nbsp;
@@ -94,7 +97,9 @@ function UserHome() {
     </div>
 </div>
 <Link to="/users/create"  className="btn btn-primary" >
-							Create To Do
+
+      <AddIcon /> Add Todo
+
 						</Link>
 
             <br />
@@ -121,8 +126,15 @@ function UserHome() {
           <tr key={todo._id}>
              <td>{todo.text}</td>
              <td>{todo.status}</td>
-             <td> <Link to={`/users/edit/${todo._id}`} className="btn btn-warning" >Edit</Link></td>
-             <td> <button className="btn btn-danger" onClick={() => confirmDelete(todo._id)}>Delete</button></td>
+             <td> <Link to={`/users/edit/${todo._id}`} className="btn btn-warning" >   <PenIcon /> </Link></td>
+             <td> <button className="btn btn-danger" onClick={() => confirmDelete(todo._id)}>       <TrashIcon />       <i class="bi bi-trash3-fill"></i> </button>
+  
+           
+
+             
+
+
+      </td>
           </tr>
         ))}
         </tbody>

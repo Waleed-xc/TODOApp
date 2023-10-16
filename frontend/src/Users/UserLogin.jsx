@@ -41,10 +41,9 @@ const UserLogin = () => {
 <br/>
 <br/>
 <div className="h-10 d-flex align-items-center justify-content-center">
-<div class="shadow p-3 mb-5 bg-body rounded">   
-  <div class="card text-white bg-dark" style={{maxWidth: "20"}} >
+  <div class="card text-black bg-light w-25 " style={{maxWidth: "20"}} >
 <fieldset style={{marginBlock: "10"}} >
-<div class="card-header text-center ">user Login</div>
+<div class="card-header text-center ">User Login</div>
 <div class="card-body">
     <div className="w-150 p-3"> 
     <div className="form-group mt-2 ">  
@@ -58,11 +57,14 @@ const UserLogin = () => {
   </div>
 <div class="text-center">
     <button disabled={isLoading}  class="btn btn-light active">Login</button>
+    <br />
+    <br />
+    <p>Sign Up Here  <a  href="/" class="btn btn-light active" > Sign Up </a> 
+    </p>
     {error && <div  style={{textAlign: 'center'}}  className="card text-dark bg-warning">{error}</div>}
     </div>
   </div>
   </fieldset>
-  </div>
   </div>
   </div>
 </form>
