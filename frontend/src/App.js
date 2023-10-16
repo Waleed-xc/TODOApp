@@ -14,7 +14,9 @@ function App() {
 	<Router>
 				<Routes>
         <Route exact path="/" element={!user? <UserSignup />:<Navigate to="/users/userhome"/> }/>
-        <Route exact path="/users/userhome" element={user?<UserHome />:<Navigate to="/"/>}/>
+
+    <Route exact path="/users/userhome" element={user?<UserHome />:<Navigate to="/"/>}/>  
+
         <Route exact path="/login" element={!user? <UserLogin />:<Navigate to="/users/userhome"/>  }/>
         <Route exact path="/users/edit/:id" element={<EditTodo /> }/>
         <Route exact path="/users/create/" element={<CreateTodo /> }/>

@@ -51,11 +51,11 @@ function EditTodo() {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="card text-dark bg-primary" >Loading...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div className="card text-dark bg-warning" >{error}</div>;
   }
 
   return (
@@ -69,6 +69,11 @@ function EditTodo() {
         <option value="completed">Completed</option>
       </select>
       <button onClick={updateTodo}>Update Todo</button>
+
+      
+      {message && <div  style={{textAlign: 'center'}}  className="card text-dark bg-primary">{message}</div>}
+      {redirecting && <p  style={{textAlign: 'center'}} className="card text-dark bg-warning">Redirecting in a few seconds...</p>}
+
       {message && <p>{message}</p>}
       {redirecting && <p>Redirecting in a few seconds...</p>}
 

@@ -85,8 +85,18 @@ function CreateTodo() {
         <option value="completed">Completed</option>
       </select>
       <button onClick={createTodo} disabled={redirecting}>Create Todo</button>
+
+
+
       {message && <p>{message}</p>}
-      {redirecting && <p>Redirecting in a few seconds...</p>}
+      {message && <div  style={{textAlign: 'center'}}  className="card text-dark bg-primary">{message}</div>}
+
+
+
+
+      {redirecting && <p  style={{textAlign: 'center'}} className="card text-dark bg-warning">Redirecting in a few seconds...</p>}
+
+
     </div>
   );
 }

@@ -10,6 +10,17 @@ const UserSignup = () => {
     await signup(username,email, password)
   }
   return (
+    <ul class="background">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
     <form  onSubmit={handleSubmit} >
 <p></p>
 <br/>
@@ -47,6 +58,7 @@ const UserSignup = () => {
   </div>
   </div>
 </form>
+</ul>
   )
 }
 export default UserSignup
