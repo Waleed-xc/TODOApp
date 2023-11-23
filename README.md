@@ -22,6 +22,22 @@
 11- open another terminal and cd to the backend and run the command nodemon index.js
 
 
+
+
+</br>
+
+<img src="https://cdn.simpleicons.org/react" alt="react" height="48" width="48">
+<img src="https://cdn.simpleicons.org/mongodb" alt="mongodb" height="48" width="48">
+<img src="https://cdn.simpleicons.org/html5" alt="html5" height="48" width="48">
+<img src="https://cdn.simpleicons.org/css3" alt="css3" height="48" width="48">
+<img src="https://cdn.simpleicons.org/express" alt="express" height="48" width="48">
+<img src="https://cdn.simpleicons.org/nodedotjs" alt="nodejs" height="48" width="48">
+<img src="https://cdn.simpleicons.org/bootstrap" alt="bootstrap" height="48" width="48">
+
+
+</br>
+
+
 application showcase
 -
 ![Screenshot (23)](https://github.com/Waleed-xc/TODOApp/assets/102128756/489d0c9c-4aa7-4af7-a069-3bb0aa5d5f1e)
