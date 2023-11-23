@@ -25,6 +25,7 @@
 
 
 </br>
+<p align="center">
 
 <img src="https://cdn.simpleicons.org/react" alt="react" height="48" width="48">
 <img src="https://cdn.simpleicons.org/mongodb" alt="mongodb" height="48" width="48">
@@ -33,7 +34,7 @@
 <img src="https://cdn.simpleicons.org/express" alt="express" height="48" width="48">
 <img src="https://cdn.simpleicons.org/nodedotjs" alt="nodejs" height="48" width="48">
 <img src="https://cdn.simpleicons.org/bootstrap" alt="bootstrap" height="48" width="48">
-
+</p>
 
 </br>
 
